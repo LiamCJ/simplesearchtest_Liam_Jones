@@ -7,7 +7,9 @@
                                             [resultData]="searchResults"></ss-app-search-result-table>
             </ss-app-search-input-card>
             <!--TODO *bonus* insert a 'no results found' element here!-->
+            <div class="no-results" [innerHtml]="noResults"></div>
             <!--TODO *bonus* insert an 'search error ' element here!-->
+            <div class="search-error" [innerHtml]="searchError"></div>
         </div>
     </div>
 </main>
