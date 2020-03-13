@@ -3,6 +3,6 @@
  */
 export const Config = {
     //change me!!! :)
-    apiBaseUrl: "http://localhost:6363/SimpleSearchApi/",
+    apiBaseUrl: "http://localhost:1234/SimpleSearchApi/",
     searchApi: "querySearchTerm"
 };
