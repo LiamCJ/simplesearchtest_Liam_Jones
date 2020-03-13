@@ -13,6 +13,8 @@ import {SearchResultTableComponent} from "./shared/search-result-table/search-re
 })
 export class MainContentComponent implements OnInit {
     searchResults: SearchResult[] = null;
+    noResults: templateUrl = null;
+    searchError: templateUrl = null;
 
     constructor(private apiDataService: ApiDataService) {
     }
@@ -30,6 +32,9 @@ export class MainContentComponent implements OnInit {
              enter main-content.component.html and add some HTML that would be our "no results found" element
              There is a "no-results" class for you to use, feel free to use your own or improve upon the one in existence
              */
+             if(this.searchResults == null){
+                this.noResults = `<div class="no-results">No Results Found</div>`;
+            }
         }, error => {
             console.log(error);
             if (error == "To be completed!")
@@ -40,6 +45,7 @@ export class MainContentComponent implements OnInit {
                  enter main-content.component.html and add some HTML that would be our error message element
                  There is a "search-error" class for you to use, feel free to use your own or improve upon the one in existence
                 */
+                this.searchError = `<div class="search-error">${error}</div>`;
             }
         });
     }
